@@ -1,0 +1,11 @@
+.bonuses-page {
+	position: relative;
+	padding: 2rem 0;
+
+	.popup {
+		position: absolute;
+		top: 4.75rem;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

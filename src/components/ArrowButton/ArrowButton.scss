@@ -1,0 +1,47 @@
+@use '../../assets/style/colors' as *;
+
+.arrow-btn {
+	position: relative;
+	outline: none;
+	background-color: transparent;
+	min-width: 2.188rem;
+	height: 2.188rem;
+	border-radius: 50%;
+	border: 1px solid $color-red-accent;
+	cursor: pointer;
+
+	&::before {
+		position: absolute;
+		content: '';
+		top: 12px;
+		left: 12.5px;
+		width: 0.625rem;
+		height: 0.5px;
+		transform: rotate(45deg);
+		background-color: $color-red-accent;
+	}
+
+	&::after {
+		position: absolute;
+		content: '';
+		bottom: 13.5px;
+		left: 12.5px;
+		width: 0.625rem;
+		height: 0.5px;
+		transform: rotate(-45deg);
+		background-color: $color-red-accent;
+	}
+
+	&:hover {
+		border-color: $color-red-accent-active;
+		&::before {
+			background-color: $color-red-accent-active;
+		}
+		&::after {
+			background-color: $color-red-accent-active;
+		}
+	}
+	&:active {
+		opacity: 0.8;
+	}
+}

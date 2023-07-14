@@ -1,0 +1,18 @@
+@use '../../assets/style/colors' as *;
+@use '../../assets/style/variables' as *;
+
+.btn {
+	border: 1px solid $color-red-accent;
+	color: $color-red-accent;
+	background-color: $color-white;
+	outline: none;
+	padding: 1rem;
+	font-size: 16px;
+	cursor: pointer;
+	transition: $transition;
+
+	&:hover {
+		border: 1px solid $color-red-accent-active;
+		color: $color-red-accent-active;
+	}
+}

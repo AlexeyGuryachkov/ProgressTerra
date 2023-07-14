@@ -1,0 +1,28 @@
+@use '../../../assets/style/colors' as *;
+
+.bonuses-info {
+	display: flex;
+	align-items: center;
+
+	&__info-block {
+		margin-right: 2.5rem;
+	}
+
+	&__header {
+		margin-bottom: 0.9rem;
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	&__bonuses {
+		display: flex;
+		white-space: nowrap;
+		color: $color-text-forms;
+		font-size: 16px;
+		font-weight: 400;
+
+		.icon {
+			margin: 0 4px;
+		}
+	}
+}

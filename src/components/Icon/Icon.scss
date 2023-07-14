@@ -1,0 +1,33 @@
+@use '../../assets/style/colors' as *;
+@use '../../assets/style/variables' as *;
+
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: default;
+
+	&.clickable {
+		cursor: pointer;
+	}
+
+	&.active {
+		svg {
+			fill: $color-red-accent-dark;
+			animation: 2.5s infinite growin;
+		}
+	}
+
+	&.white {
+		svg {
+			fill: $color-white;
+		}
+	}
+}
+
+@keyframes growin {
+	50% {
+		transform: scale(0.93);
+		fill: $color-red-accent;
+	}
+}

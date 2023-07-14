@@ -1,0 +1,15 @@
+@use '../../../../assets/style/colors' as *;
+@use '../../../../assets/style/variables' as *;
+
+.nav-item {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 0.5rem;
+	transition: $transition;
+
+	&.active {
+		background-color: $color-red-accent;
+		color: $color-white;
+	}
+}

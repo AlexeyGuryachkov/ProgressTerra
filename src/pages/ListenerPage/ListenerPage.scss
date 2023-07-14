@@ -1,0 +1,38 @@
+@use '../../assets/style/colors' as *;
+
+.listener-page {
+	&__btns {
+		display: flex;
+		justify-content: center;
+		padding-top: 2.5rem;
+	}
+
+	&__text {
+		display: flex;
+		margin-top: 2.45rem;
+		padding: 1rem;
+		min-height: 10rem;
+		height: fit-content;
+		color: $color-white;
+		background: linear-gradient($color-red-accent, $color-red-accent-dark);
+
+		.text-wrapper {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&--text {
+			width: 50%;
+			padding: 0 0.3rem;
+		}
+
+		&--plug {
+			margin: auto;
+		}
+
+		.icon {
+			align-self: flex-start;
+		}
+	}
+}

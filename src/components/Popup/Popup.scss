@@ -1,0 +1,10 @@
+@use '../../assets/style/variables' as *;
+@use '../../assets/style/colors' as *;
+
+.popup {
+	display: inline-flex;
+	padding: 1.25rem;
+	border-radius: 1.25rem;
+	box-shadow: $shadow;
+	background-color: $color-white;
+}

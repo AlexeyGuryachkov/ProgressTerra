@@ -1,0 +1,7 @@
+@use '../../../assets/style/colors' as *;
+
+.bonuses-body {
+	margin-top: 4.375rem;
+	height: 10rem;
+	background: linear-gradient($color-red-accent, $color-red-accent-dark);
+}

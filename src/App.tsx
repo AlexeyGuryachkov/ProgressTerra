@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import PagesContainer from './components/PagesContainer/PagesContainer'
+import Header from './components/Header/Header'
+import Preloader from './components/Preloader/Preloader'
+
+import { login } from './store/auth/auth'
+
+import { getIsAuth, getIsLoading } from './store/auth/auth-selectors'
+
+import { removeToken } from './functions/localStorage'
+
+import './App.scss'
+
+const App: FC = () => {
+	const isLoading = useSelector(getIsLoading)
+	const isAuth = useSelector(getIsAuth)
+
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch<any>(login())
+	}, [dispatch])
+
+	useEffect(
+		() => () => {
+			removeToken()
+		},
+		[]
+	)
+
+	return (
+		<div className="app">
+			<Header />
+			{isAuth ? <PagesContainer /> : <div className="no-access-plug">Нет достпупа</div>}
+			<PagesContainer />
+			<Preloader isShow={isLoading} />
+		</div>
+	)
 }
 
-export default App;
+export default App
